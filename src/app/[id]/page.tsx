@@ -25,7 +25,7 @@ export async function generateMetadata(
     console.log(params.id)
 
     // console.log(content)
-    // console.log(url + "api/image/" + content!.image)
+    console.log(url + "api/image/" + content!.image)
 
     return {
         title: content?.title,
