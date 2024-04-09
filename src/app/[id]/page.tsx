@@ -22,12 +22,17 @@ export async function generateMetadata(
         }
     })
 
+    console.log(params.id)
+
+    // console.log(content)
+    // console.log(url + "api/image/" + content!.image)
+
     return {
         title: content?.title,
         openGraph: {
             title: content?.title,
             description: content?.description,
-            images: [url + content?.image],
+            images: [url + "api/image/" + content?.image],
             type: 'website',
             url: url + params.id,
             siteName: 'Makuro',
@@ -51,7 +56,7 @@ export default async function Page({ params }: { params: { id: string } }) {
 
     return <Container>
         <Stack>
-            <Image src={"/api/image/"+content.image} alt="" />
+            <Image src={"/api/image/" + content.image} alt="" />
             <Title>{content.title}</Title>
             <Text>{content.description}</Text>
         </Stack>
